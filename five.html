@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic Search Filter</title>
+</head>
+<body>
+  <input type="text" id="searchInput" placeholder="Search for items">
+
+  <ul id="resultList">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Tailwind CSS</li>
+    <li>GitHub</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const resultList = document.getElementById('resultList');
+    const items = resultList.querySelectorAll('li');
+
+    searchInput.addEventListener('input', () => {
+      const searchTerm = searchInput.value.toLowerCase();
+
+      items.forEach(item => {
+        const itemText = item.textContent.toLowerCase();
+        if (itemText.includes(searchTerm)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

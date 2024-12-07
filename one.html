@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Theme Toggle</title>
+  <style>
+    .dark-mode {
+      background-color: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggle-button">Toggle Theme</button>
+
+  <script>
+    const toggleButton = document.getElementById('toggle-button');
+    const body = document.body;
+
+    function toggleTheme() {
+      body.classList.toggle('dark-mode');
+      toggleButton.textContent = body.classList.contains('dark-mode') ? 'Light Theme' : 'Dark Theme';
+    }
+
+    toggleButton.addEventListener('click', toggleTheme);
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Counter</title>
+  <style>
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .counter-display {
+      font-size: 24px;
+      padding: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-container">
+    <div class="counter-display" id="counter-display">0</div>
+    <button id="increment-button">+</button>
+    <button id="decrement-button">-</button>
+  </div>
+
+  <script>
+    const counterDisplay = document.getElementById('counter-display');
+    const incrementButton = document.getElementById('increment-button');
+    const decrementButton = document.getElementById('decrement-button');
+
+    let counter = 0;
+
+    function updateCounterDisplay() {
+      counterDisplay.textContent = counter;
+    }
+
+    function incrementCounter() {
+      counter++;
+      updateCounterDisplay();
+    }
+
+    function decrementCounter() {
+      if (counter > 0) {
+        counter--;
+        updateCounterDisplay();
+      } else {
+        alert('Counter cannot go below zero.');
+      }
+    }
+
+    incrementButton.addEventListener('click', incrementCounter);
+    decrementButton.addEventListener('click', decrementCounter);
+
+    updateCounterDisplay();
+  </script>
+</body>
+</html>

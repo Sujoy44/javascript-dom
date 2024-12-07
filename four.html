@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown Example</title>
+</head>
+<body>
+  <h2 id="heading">Which is your favorite Programming Language:</h2>
+  <select id="languageSelect">
+    </select>
+
+  <script>
+    const headingElement = document.getElementById('heading');
+    const selectElement = document.getElementById('languageSelect');
+
+    const options = ["JavaScript", "Java", "Python", "C++"];
+
+    options.forEach(option => {
+      const optionElement = document.createElement('option');
+      optionElement.textContent = option;
+      optionElement.value = option;
+      selectElement.appendChild(optionElement);
+    });
+  </script>
+</body>
+</html>
